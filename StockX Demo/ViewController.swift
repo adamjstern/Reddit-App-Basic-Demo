@@ -7,7 +7,7 @@
 //  Created by Adam Stern on 6/3/18.
 //  Copyright © 2018 Adam Stern. All rights reserved.
 //
-//  Notable Featurest:
+//  Notable Features:
 //  Keyboard return key and filter button both submit and dismiss the keyboard
 //  Safari web view opens in app for easy access to links.
 //
@@ -21,7 +21,6 @@ import UIKit
 import SafariServices
 
 //  Series of Structs to make up the structure of the Reddit JSON format
-
 struct redditJson: Decodable {
     let kind: String?
     let data: redditJsonChildren?
@@ -52,13 +51,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
-    //Functionality for the filter button. Also dismisses the keyboard when pressed.
+    //  Functionality for the filter button. Also dismisses the keyboard when pressed.
     @IBAction func filterButtonPress(_ sender: Any) {
         filterField.resignFirstResponder()
         initJson()
     }
     
-    //Similar functionalit for the return key on the keyboard
+    //  Similar functionality for the return key on the keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         filterField.resignFirstResponder()
         filterPosts()
@@ -79,11 +78,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         URLSession.shared.dataTask(with: url) { (data, response, err) in
             
-            //check response 200 ok
-            
             guard let data = data else { return }
-            
-            //let dataString = String(data: data, encoding: .utf8)
             
             do {
                 let redditJsonVar = try JSONDecoder().decode(redditJson.self, from: data)
@@ -108,7 +103,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
             }
             self.tableView.reloadData()
-            //print("Doing stuff all the time")
             }.resume()        // Do any additional setup after loading the view, typically from a nib.
     }
  

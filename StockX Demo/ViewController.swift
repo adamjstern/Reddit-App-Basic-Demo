@@ -72,6 +72,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func initJson() {
         self.subreddits.removeAll()
         self.titles.removeAll()
+        self.URLs.removeAll()   
         let jsonURLString = "https://www.reddit.com/.json"
         let subredditFilter = filterField.text
         guard let url = URL(string: jsonURLString) else { return }

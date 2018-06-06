@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E531A5BD20C7514E002071EC /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E531A5BC20C7514E002071EC /* CustomTableViewCell.swift */; };
 		E569541520C4606100EEFFAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E569541420C4606100EEFFAF /* AppDelegate.swift */; };
 		E569541720C4606100EEFFAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E569541620C4606100EEFFAF /* ViewController.swift */; };
 		E569541A20C4606100EEFFAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E569541820C4606100EEFFAF /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E531A5BC20C7514E002071EC /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		E569541120C4606000EEFFAF /* StockX Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StockX Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E569541420C4606100EEFFAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E569541620C4606100EEFFAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			children = (
 				E569541420C4606100EEFFAF /* AppDelegate.swift */,
 				E569541620C4606100EEFFAF /* ViewController.swift */,
+				E531A5BC20C7514E002071EC /* CustomTableViewCell.swift */,
 				E569541820C4606100EEFFAF /* Main.storyboard */,
 				E569541E20C4606600EEFFAF /* Assets.xcassets */,
 				E569542020C4606600EEFFAF /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				E569541720C4606100EEFFAF /* ViewController.swift in Sources */,
 				E569541520C4606100EEFFAF /* AppDelegate.swift in Sources */,
+				E531A5BD20C7514E002071EC /* CustomTableViewCell.swift in Sources */,
 				E569541D20C4606100EEFFAF /* StockX_Demo.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YY6DXJ98AK;
 				INFOPLIST_FILE = "StockX Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +457,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YY6DXJ98AK;
 				INFOPLIST_FILE = "StockX Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

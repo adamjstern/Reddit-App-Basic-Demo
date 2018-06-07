@@ -72,9 +72,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func initJson() {
         self.subreddits.removeAll()
         self.titles.removeAll()
-        self.URLs.removeAll()   
-        let jsonURLString = "https://www.reddit.com/.json"
+        self.URLs.removeAll()
         let subredditFilter = filterField.text
+        var jsonURLString = "https://www.reddit.com"
+        if (subredditFilter != ""){
+            jsonURLString += "/r/" + subredditFilter!
+        }
+        jsonURLString += "/.json"
         guard let url = URL(string: jsonURLString) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, err) in

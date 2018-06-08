@@ -107,7 +107,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
                 
             }
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
             }.resume()        // Do any additional setup after loading the view, typically from a nib.
     }
  
@@ -118,6 +120,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         filterField.delegate = self
         super.viewDidLoad()
         initJson()
+        self.tableView.reloadData()
     }
     
     

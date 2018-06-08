@@ -24,6 +24,7 @@ import SafariServices
 struct redditJson: Decodable {
     let kind: String?
     let data: redditJsonChildren?
+    let reason: String?
 }
 
 struct redditJsonChildren: Decodable {
@@ -96,6 +97,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     }
                     return
                 }
+                if (redditJsonVar.reason == "private"){
+                    let alert = UIAlertController(title: "Warning", message: "Subreddit is private.", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    return
+                }
                 for thing in (redditJsonVar.data?.children)! {
                     if (subredditFilter == ""){
                         self.subreddits.append((thing.data?.subreddit)!)
@@ -103,7 +113,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         self.URLs.append((thing.data?.url)!)
                     }
                     else {
-                        if (subredditFilter == thing.data?.subreddit){
+                        if ((subredditFilter?.caseInsensitiveCompare((thing.data?.subreddit)!))! == ComparisonResult.orderedSame){
                             self.subreddits.append((thing.data?.subreddit)!)
                             self.titles.append((thing.data?.title)!)
                             self.URLs.append((thing.data?.url)!)

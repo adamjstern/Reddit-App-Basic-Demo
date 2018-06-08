@@ -87,6 +87,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             do {
                 let redditJsonVar = try JSONDecoder().decode(redditJson.self, from: data)
+                if (redditJsonVar.data?.children?.count == 0){
+                    let alert = UIAlertController(title: "Warning", message: "Subreddit could not be found.", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    return
+                }
                 for thing in (redditJsonVar.data?.children)! {
                     if (subredditFilter == ""){
                         self.subreddits.append((thing.data?.subreddit)!)

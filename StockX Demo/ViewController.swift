@@ -74,7 +74,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.subreddits.removeAll()
         self.titles.removeAll()
         self.URLs.removeAll()
-        let subredditFilter = filterField.text
+        var subredditFilter = filterField.text
+        subredditFilter = subredditFilter?.replacingOccurrences(of: " ", with: "_")
         var jsonURLString = "https://www.reddit.com"
         if (subredditFilter != ""){
             jsonURLString += "/r/" + subredditFilter!
